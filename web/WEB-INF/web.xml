@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ListEmployees</servlet-name>
+        <servlet-class>controller.servlet.ListEmployees</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerifyClient</servlet-name>
+        <servlet-class>controller.servlet.VerifyClient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListClients</servlet-name>
+        <servlet-class>controller.servlet.ListClients</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertClient</servlet-name>
+        <servlet-class>controller.servlet.InsertClient</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListEmployees</servlet-name>
+        <url-pattern>/ListEmployees</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyClient</servlet-name>
+        <url-pattern>/VerifyClient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListClients</servlet-name>
+        <url-pattern>/ListClients</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertClient</servlet-name>
+        <url-pattern>/InsertClient</url-pattern>
+    </servlet-mapping>
+</web-app>

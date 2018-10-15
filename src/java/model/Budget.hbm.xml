@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-may-2018 18:48:53 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Budget" table="budget" catalog="clean_project" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="request" class="model.Request" fetch="select">
+            <column name="idRequest" not-null="true" />
+        </many-to-one>
+        <property name="budget" type="long">
+            <column name="budget" precision="11" scale="0" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="8" not-null="true" />
+        </property>
+        <set name="orders" table="order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idBudget" not-null="true" />
+            </key>
+            <one-to-many class="model.Order" />
+        </set>
+    </class>
+</hibernate-mapping>
